@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "jsx": "react",
+    "lib": [
+      "es2017",
+      "dom",
+      "dom.iterable",
+    ],
+
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "keyofStringsOnly": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+
+    "baseUrl": "./src",
+    "outDir": "dist"
+  },
+  "include": [
+    "src"
+  ]
+ }
