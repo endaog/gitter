@@ -12,11 +12,11 @@ export namespace Payload {
   }
 
   export interface IFetchProjectSuccess {
-    name: string;
+    projectList: Record<string, ProjectsMap>;
   }
 
   export interface IFetchProjectError {
-    name: string;
+    error: string;
   }
 
 }
@@ -33,11 +33,11 @@ export namespace ActionCreator {
   ) => Action.IFetchProject;
 
   export type IFetchProjectSuccess = (
-    name: string,
+    projectList: Record<string, ProjectsMap>,
   ) => Action.IFetchProjectSuccess;
 
   export type IFetchProjectError = (
-    name: string,
+    error: string,
   ) => Action.IFetchProjectError;
 }
 

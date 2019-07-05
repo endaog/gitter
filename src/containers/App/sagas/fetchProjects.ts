@@ -9,7 +9,7 @@ export function* fetchProjects(action: Models.Action.IFetchProject) {
   try {
     const { name } = action.payload;
     const projectList = yield call(api.getProjects, name);
-    console.log(projectList);
+    
     yield put(batchActions([
       fetchProjectSuccess(projectList),
     ]));

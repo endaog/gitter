@@ -13,7 +13,7 @@ axios.interceptors.response.use(
 );
 
 export async function getProjects(query: string) {
-  const url = `${API_BASE_URL}/github`;
+  const url = `${API_BASE_URL}/github/?name=${query}`;
   const { data } = await axios.get(url, { headers: {
   }});
 
