@@ -14,6 +14,8 @@ export function* fetchProjects(action: Models.Action.IFetchProject) {
       fetchProjectSuccess(projectList),
     ]));
   } catch (error) {
-    // fetchProjectError(error),   
+    yield put(batchActions([
+      fetchProjectError(error),
+    ]));  
   }
 }

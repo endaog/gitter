@@ -21,3 +21,24 @@ export const fetchProjectError: ActionCreator.IFetchProjectError = (error: strin
       error
     },
 });
+
+export const fetchTweetRequest: ActionCreator.IFetchTweet = (name: string) => ({
+  type: ActionTypes.FETCH_TWEETS,
+  payload: {
+    name,
+  },
+});
+
+export const fetchTweetSuccess: ActionCreator.IFetchTweetSuccess = (tweetList) => ({
+    type: ActionTypes.FETCH_TWEETS_SUCCESS,
+    payload: {
+      tweetList,
+    },
+});
+
+export const fetchTweetError: ActionCreator.IFetchTweetError = (error: string) => ({
+    type: ActionTypes.FETCH_TWEETS_ERROR,
+    payload: {
+      error
+    },
+});

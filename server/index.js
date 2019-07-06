@@ -9,6 +9,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pino);
 app.use(cors());
 
+const twitterKey = process.env.TWITTER_API_KEY;
+
 app.get('/api/github', (req, res) => {
   const name = req.query.name || '';
   
@@ -31,7 +33,7 @@ app.get('/api/github', (req, res) => {
         const results = repos.items.map( (item) => {
           return {
             id: item.id,
-            label: item.name,
+            name: item.name,
             description: item.description
           }
         });
@@ -41,9 +43,38 @@ app.get('/api/github', (req, res) => {
         // API call failed...
         console.log('failed', err);
     });
+});
 
+app.get('/api/tweets', (req, res) => {
+  const name = req.query.name || '';
+  console.log(name);
+  var options = {
+    uri: 'https://api.twitter.com/1.1/search/tweets.json',
+    qs: {
+      q: name,
+      result_type: 'popular',
+    },
+    headers: {
+        'Authorization': `Bearer ${twitterKey}`,
+    },
+    json: true
+  };
   
-  
+  rp(options)
+    .then((tweets) => {
+        res.setHeader('Content-Type', 'application/json');
+        const results = tweets.statuses.map( (item) => {
+          return {
+            id: item.id,
+            tweet: item.text,
+          }
+        });
+        res.send(results);
+    })
+    .catch((err) => {
+        // API call failed...
+        console.log('failed', err);
+    });
 });
 
 app.listen(3001, () =>

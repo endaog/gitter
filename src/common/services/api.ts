@@ -19,3 +19,11 @@ export async function getProjects(query: string) {
 
   return data;
 }
+
+export async function getTweets(query: string) {
+  const url = `${API_BASE_URL}/tweets/?name=${query}`;
+  const { data } = await axios.get(url, { headers: {
+  }});
+
+  return data;
+}

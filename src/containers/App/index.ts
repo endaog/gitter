@@ -2,18 +2,17 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import AppScreen from 'components/AppScreen';
-
-// import { availableFilters, citations, images, storyCards, textComponents } from 'common/containers/Documents/selectors';
-// import { projectMode } from 'common/containers/Project/selectors';
-import { fetchProjectRequest } from 'containers/App/actions';
-// import { rootDocument } from 'common/containers/RootDocument/selectors';
+import { projectList, tweetList } from 'containers/App/selectors';
+import { fetchProjectRequest, fetchTweetRequest } from 'containers/App/actions';
 
 const mapStateToProps = createStructuredSelector({
-  
+    projectList,
+    tweetList,
 });
 
 const mapDispatchToProps = {
     fetchProjectRequest,
+    fetchTweetRequest,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppScreen);
