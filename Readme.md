@@ -1,17 +1,20 @@
 Gitter - react redux typescript demo 
 
-From the root folder run the following:
+From the root folder do the following:
 
 
-Add your twitter token to the .env file in the root folder
+First add your twitter api token to the .env file in the root folder
 
 
-Open a terminal window and run to install all dependancies
+Then open a terminal window and to install all dependancies
 ### `Yarn install`
-Start the server
+
+Start the back end server
 ### `Yarn server`
-Open another terminal Window
+
+Open another terminal Window to start the app
 ### `Yarn start`
+
 Open another terminal window to run the tests
 ### `Yarn test`
 
