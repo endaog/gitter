@@ -114,6 +114,7 @@
     "sanitize-html": "^1.19.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "tailwindcss": "^1.0.4",
     "terser-webpack-plugin": "1.1.0",
     "tslint": "^5.13.0",
     "tslint-config-airbnb": "^5.11.0",
@@ -155,7 +156,9 @@
     "tslint-config-prettier": "^1.18.0"
   },
   "scripts": {
+    "prestart": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
     "start": "node scripts/start.js",
+    "prebuild": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "server": "node-env-run server --exec nodemon | pino-colada"

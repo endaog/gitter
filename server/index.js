@@ -18,7 +18,7 @@ app.get('/api/github', (req, res) => {
     uri: 'https://api.github.com/search/repositories?',
     qs: {
       q: name + ' in:name in:descrption',
-      sort: 'stars',
+      sort: 'name',
       order: 'desc' 
     },
     headers: {

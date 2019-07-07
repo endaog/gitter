@@ -3,6 +3,7 @@ import * as AppModels from 'containers/App/models';
   export interface IAppScreenState { 
     query: string;
     showTweets: boolean;
+    showMatches: boolean;
   }
 
   export interface IAppScreenActions {
