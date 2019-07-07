@@ -156,9 +156,9 @@
     "tslint-config-prettier": "^1.18.0"
   },
   "scripts": {
-    "prestart": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
+    
     "start": "node scripts/start.js",
-    "prebuild": "tailwind build ./src/index.tailwind.css -c ./tailwind.config.js -o ./src/index.css",
+    
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
     "server": "node-env-run server --exec nodemon | pino-colada"

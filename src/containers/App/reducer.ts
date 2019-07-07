@@ -24,7 +24,6 @@ export const setProjects: Reducer<Models.State.IState, Models.Action.IFetchProje
 
 export const setTweets: Reducer<Models.State.IState, Models.Action.IFetchTweetSuccess> = (state, action) => {
   const { tweetList } = action.payload;
-  console.log('reducer', tweetList);
   return state.set('tweetList', Immutable.fromJS(tweetList));
 }
 

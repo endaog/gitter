@@ -42,6 +42,8 @@ app.get('/api/github', (req, res) => {
     .catch((err) => {
         // API call failed...
         console.log('failed', err);
+        res.status(err.statusCode)
+           .json({success: false, message: err.error.message});
     });
 });
 

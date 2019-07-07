@@ -67,6 +67,7 @@ class AppScreen extends React.PureComponent<IAppScreenProps, IAppScreenState> {
     const { query, showTweets, showMatches } = this.state;
     return (
       <div className="container pt-24 md:pt-24 px-6 mx-auto flex flex-wrap flex-col md:flex-row">
+        
         <div className="container mx-auto flex flex-col items-center">
           <p className="text-blue-400 font-bold text-6xl pb-8 lg:pb-6 text-center md:text-left fade-in">Gitter</p>
           <input onChange={ this.handleSearch } className="shadow appearance-none border rounded w-1/2 py-2 px-3 text-grey-darker" type="search" placeholder="Search..." value={ query }></input>
